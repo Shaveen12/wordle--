@@ -1,0 +1,76 @@
+/* Custom styles for the slider */
+.slider {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: #ddd; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1; /* Fully shown on hover */
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; /* Make the thumb circular */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; /* Make the thumb circular */
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 640px) {
+    .slider {
+      height: 10px; /* Adjust slider height for small screens */
+    }
+  
+    .slider::-webkit-slider-thumb {
+      width: 20px; /* Adjust thumb size for small screens */
+      height: 20px;
+    }
+  
+    .slider::-moz-range-thumb {
+      width: 20px; /* Adjust thumb size for small screens */
+      height: 20px;
+    }
+  
+    h1 {
+      font-size: 2.5rem; /* Adjust title size for small screens */
+    }
+  
+    .bg-white {
+      padding: 2rem; /* Adjust padding for small screens */
+    }
+  
+    .block {
+      margin-bottom: 1rem; /* Adjust margin for small screens */
+    }
+  
+    .text-lg {
+      font-size: 1rem; /* Adjust font size for small screens */
+    }
+  
+    .mb-4 {
+      margin-bottom: 1rem; /* Adjust margin for small screens */
+    }
+  
+    .p-2 {
+      padding: 0.5rem; /* Adjust padding for buttons */
+    }
+  }
+  

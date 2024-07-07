@@ -1,0 +1,9 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4">
+  <h1 class="text-5xl font-bold mb-8 text-center">Wordle++</h1>
+  <div class="bg-white p-6 rounded-lg shadow-lg text-black w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-4">
+    <label for="wordLength" class="block text-lg font-medium mb-4 text-center">Choose Word Length:</label>
+    <input [(ngModel)]="wordLength" type="range" min="3" max="10" class="slider mb-4 w-full" id="wordLength" />
+    <p class="text-center mb-4">Selected Word Length: <span class="font-bold">{{wordLength}}</span></p>
+    <button (click)="startGame()" class="p-2 w-full bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-200">Start Game</button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-white w-full max-w-md sm:max-w-lg lg:max-w-xl mx-4 flex flex-col items-center">
+      <div class="w-full">
+        <div *ngFor="let row of board; let rowIndex = index" class="flex mb-2 justify-center">
+          <div *ngFor="let cell of row; let cellIndex = index" class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mx-1 flex items-center justify-center border border-gray-300 text-xl font-bold" [ngClass]="colors[rowIndex][cellIndex]">
+            {{ cell }}
+          </div>
+        </div>
+        <input *ngIf="!result" class="mt-4 p-2 border border-gray-300 rounded-lg text-lg w-full bg-gray-700 text-white placeholder-gray-400" [(ngModel)]="currentGuess" (keydown.enter)="makeGuess()" [maxlength]="wordLength" placeholder="Enter your guess" />
+        <h1 *ngIf="result" class="mt-4 text-2xl font-bold text-center">Congrats!!!</h1>
+        <h2 class="mt-4 text-xl sm:text-2xl font-bold text-center">Streak: {{streak}}</h2>
+        <h2 *ngIf="errorMessage" class="font-bold text-red-500 mt-2 text-center">{{ errorMessage }}</h2>
+        <h2 *ngIf="failed" class="font-bold text-red-500 mt-2 text-center">You Suck!</h2>
+        <h2 *ngIf="failed" class="font-bold text-green-500 mt-2 text-center">Solution: {{solution}}</h2>
+        <div class="flex flex-col sm:flex-row justify-center mt-4">
+          <button *ngIf="result || failed" (click)="resetGame()" class="p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200 mb-2 sm:mb-0 sm:mr-2">Play Again</button>
+          <button (click)="goHome()" class="p-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition duration-200">Return to Home</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
